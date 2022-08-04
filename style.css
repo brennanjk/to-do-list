@@ -20,3 +20,30 @@ body {
     color: var(--text-color1);
     background-color: var(--bg-color1);
 }
+
+#content {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    grid-template-rows: 5rem 1fr 5rem;
+    height: 100vh;
+}
+
+.header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+}
+
+.nav-bar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.container {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.footer {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+}
