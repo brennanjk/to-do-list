@@ -13,6 +13,7 @@
 }
 
 html {
+    font-family: 'Bitter', serif;
     font-size: 20px;
 }
 
@@ -46,4 +47,9 @@ body {
 .footer {
     grid-column: 1 / -1;
     grid-row: 3 / 4;
+}
+
+.header, .footer {
+    justify-self: center;
+    align-self: center;
 }
