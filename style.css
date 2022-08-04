@@ -35,6 +35,9 @@ body {
 .header {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
+    display: flex;
+    gap: .5rem;
+    font-size: 2rem;
 }
 
 .nav-bar {
@@ -66,6 +69,11 @@ body {
     line-height: 2rem;
     display: flex;
     gap: 1rem;
+}
+
+.header>img {
+    filter: invert(100%) sepia(0%) saturate(6503%) hue-rotate(184deg) brightness(110%) contrast(85%);
+    width: 2rem;
 }
 
 li>img {
