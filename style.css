@@ -1,5 +1,6 @@
 :root {
     --text-color1: #ececec;
+    --text-color2: #111111;
     --bg-color1: #1a1818;
     --bg-color2: #aaaaaa;
     --bg-color3: #dbd9d9;
@@ -26,7 +27,7 @@ body {
 
 #content {
     display: grid;
-    grid-template-columns: 10rem 1fr;
+    grid-template-columns: 15rem 1fr;
     grid-template-rows: 5rem 1fr 5rem;
     height: 100vh;
 }
@@ -40,6 +41,8 @@ body {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     background-color: var(--bg-color2);
+    color: var(--text-color2);
+    padding: 2rem 3rem 0;
 }
 
 .container {
