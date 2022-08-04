@@ -42,7 +42,7 @@ body {
     grid-row: 2 / 3;
     background-color: var(--bg-color2);
     color: var(--text-color2);
-    padding: 2rem 3rem 0;
+    padding: 2rem 2.5rem 0;
 }
 
 .container {
@@ -59,4 +59,9 @@ body {
 .header, .footer {
     justify-self: center;
     align-self: center;
+}
+
+.nav-item {
+    list-style: none;
+    line-height: 1.4rem;
 }
