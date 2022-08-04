@@ -63,5 +63,12 @@ body {
 
 .nav-item {
     list-style: none;
-    line-height: 1.4rem;
+    line-height: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+li>img {
+    width: 1.2rem;
+    filter: var(--text-color2);
 }
