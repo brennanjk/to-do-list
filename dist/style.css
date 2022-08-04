@@ -1,0 +1,22 @@
+:root {
+    --text-color1: #aee8ff;
+    --bg-color1: #1a1818;
+}
+
+/* CSS reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    color: var(--text-color1);
+    background-color: var(--bg-color1);
+}
