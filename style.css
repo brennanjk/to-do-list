@@ -92,15 +92,25 @@ li>img {
 }
 
 .task {
-    padding: 0 0 1rem;
     display: flex;
+    align-content: center;
+    padding: .25rem .5rem;
     gap: 1.5rem;
     background-color: var(--bg-color5);
+    border-radius: 5px;
+}
+
+.task>input {
+    background-color: var(--bg-color1);
 }
 
 .task>div {
     width: 30rem;
-    background-color: var(--bg-color6);
+    padding: .2rem .5rem;
+    color: var(--text-color2);
+    background-color: var(--bg-color2);
+    border: solid .1rem var(--bg-color6);
+    border-radius: 5px;
 }
 
 .add-task-btn {
