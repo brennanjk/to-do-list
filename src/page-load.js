@@ -61,7 +61,8 @@ function createContainer() {
     const container = document.createElement('div');
     container.classList.add('container');
     const btn = document.createElement('button');
-    btn.textContent = 'New Task';
+    btn.classList.add('add-task-btn');
+    btn.textContent = '+';
 
     container.appendChild(btn);
     content.appendChild(container);

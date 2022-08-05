@@ -4,6 +4,8 @@
     --bg-color1: #1a1818;
     --bg-color2: #aaaaaa;
     --bg-color3: #dbd9d9;
+    --bg-color2-dark: #999999;
+    --bg-color4: #82d36d;
 }
 
 /* CSS reset */
@@ -50,6 +52,7 @@ body {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     background-color: var(--bg-color3);
+    padding: 2rem 2.5rem 0;
 }
 
 .footer {
@@ -66,9 +69,15 @@ body {
 
 .nav-item {
     list-style: none;
-    line-height: 2rem;
     display: flex;
     gap: 1rem;
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: 15px;
+}
+
+.nav-item:hover {
+    background-color: var(--bg-color2-dark);
 }
 
 .header>img {
@@ -78,6 +87,23 @@ body {
 
 li>img {
     width: 1.2rem;
+}
+
+.add-task-btn {
+    font-size: 1.5rem;
+    width: 5rem;
+    background-color: var(--bg-color4);
+    border-radius: 15px;
+}
+
+.add-task-btn:hover {
+    filter: brightness(120%);
+    cursor: pointer;
+}
+
+.add-task-btn:active {
+    color: var(--bg-color4);
+    background-color: var(--bg-color1);
 }
 
 .footer>img {
