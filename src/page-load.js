@@ -40,7 +40,7 @@ function createNav() {
     item2.appendChild(image2);
     item2.appendChild(item2Text);
 
-    const item3 = document.createElement('div');
+    const item3 = document.createElement('li');
     item3.classList.add('nav-item');
     const image3 = document.createElement('img');
     image3.src = './images/calendar.svg'; image3.alt = "this week's tasks";
