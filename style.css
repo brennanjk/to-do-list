@@ -1,11 +1,13 @@
 :root {
     --text-color1: #ececec;
     --text-color2: #111111;
-    --bg-color1: #1a1818;
-    --bg-color2: #aaaaaa;
-    --bg-color3: #dbd9d9;
+    --bg-color1: #111E2F;
+    --bg-color2: #BCBFC6;
+    --bg-color3: #e1e4ec;
     --bg-color2-dark: #999999;
     --bg-color4: #82d36d;
+    --bg-color5: #8f9299;
+    --bg-color6: #333743;
 }
 
 /* CSS reset */
@@ -93,10 +95,12 @@ li>img {
     padding: 0 0 1rem;
     display: flex;
     gap: 1.5rem;
+    background-color: var(--bg-color5);
 }
 
 .task>div {
     width: 30rem;
+    background-color: var(--bg-color6);
 }
 
 .add-task-btn {
