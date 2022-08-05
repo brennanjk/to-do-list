@@ -60,10 +60,31 @@ function createNav() {
 function createContainer() {
     const container = document.createElement('div');
     container.classList.add('container');
+    const taskList = document.createElement('ul');
+    taskList.classList.add('task-list');
+
+    //Static task for testing purposes
+    const testTask = document.createElement('li');
+    testTask.classList.add('task');
+    const taskCheck = document.createElement('input');
+    taskCheck.classList.add('task-check');
+    taskCheck.setAttribute('type','radio');
+    const taskText = document.createElement('div');
+    taskText.textContent = 'Test Task';
+    const taskDelete = document.createElement('button');
+    taskDelete.classList.add('task-delete');
+    taskDelete.textContent = 'X'
+
+    //button to add new tasks
     const btn = document.createElement('button');
     btn.classList.add('add-task-btn');
     btn.textContent = '+';
-
+    
+    testTask.appendChild(taskCheck);
+    testTask.appendChild(taskText);
+    testTask.appendChild(taskDelete);
+    taskList.appendChild(testTask);
+    container.appendChild(taskList);
     container.appendChild(btn);
     content.appendChild(container);
 }
