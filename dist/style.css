@@ -89,6 +89,16 @@ li>img {
     width: 1.2rem;
 }
 
+.task {
+    padding: 0 0 1rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.task>div {
+    width: 30rem;
+}
+
 .add-task-btn {
     font-size: 1.5rem;
     width: 5rem;
