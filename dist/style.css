@@ -35,8 +35,6 @@ body {
 .header {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    display: flex;
-    gap: .5rem;
     font-size: 2rem;
 }
 
@@ -62,6 +60,8 @@ body {
 .header, .footer {
     justify-self: center;
     align-self: center;
+    display: flex;
+    gap: .5rem;
 }
 
 .nav-item {
@@ -78,5 +78,8 @@ body {
 
 li>img {
     width: 1.2rem;
-    filter: var(--text-color2);
+}
+
+.footer>img {
+    filter: invert(100%);
 }
