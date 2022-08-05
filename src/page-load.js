@@ -68,7 +68,7 @@ function createContainer() {
     testTask.classList.add('task');
     const taskCheck = document.createElement('input');
     taskCheck.classList.add('task-check');
-    taskCheck.setAttribute('type','radio');
+    taskCheck.setAttribute('type','checkbox');
     const taskText = document.createElement('div');
     taskText.textContent = 'Test Task';
     const taskDelete = document.createElement('button');
