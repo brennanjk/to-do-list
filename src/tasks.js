@@ -29,7 +29,11 @@ function taskForm() {
     prioDiv.appendChild(prioSelect);
     prioSelect.appendChild(option1); prioSelect.appendChild(option2); prioSelect.appendChild(option3);
 
-    form.appendChild(taskDiv); form.appendChild(prioDiv);
+    const submitBtn = document.createElement('button');
+    submitBtn.type = 'submit'; submitBtn.id = 'submit-btn';
+    submitBtn.textContent = 'Create Task';
+
+    form.appendChild(taskDiv); form.appendChild(prioDiv); form.appendChild(submitBtn);
     container.appendChild(form);
 }
 
