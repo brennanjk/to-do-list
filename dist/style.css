@@ -136,7 +136,8 @@ li>img {
     font-weight: bold;
     width: 1rem;
     height: 1rem;
-    vertical-align: middle;
+    background-color: var(--bg-color5);
+    
 }
 
 .add-task-btn {
