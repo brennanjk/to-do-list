@@ -11,7 +11,7 @@ function taskForm() {
     const taskLabel = document.createElement('label');
     taskLabel.for = 'task';
     const taskInput = document.createElement('input');
-    taskInput.type = 'text'; taskInput.id = 'task'; taskInput.name = 'task'; taskInput.placeholder = 'Task Description'; taskInput.required; taskInput.maxLength='40';
+    taskInput.type = 'text'; taskInput.id = 'task'; taskInput.name = 'task'; taskInput.placeholder = 'Task Description'; taskInput.required = true; taskInput.maxLength='40';
     taskDiv.appendChild(taskLabel); taskDiv.appendChild(taskInput);
 
     const prioDiv = document.createElement('div');
@@ -22,7 +22,7 @@ function taskForm() {
     option1.textContent = 'Low';
     const option2 = document.createElement('option');
     option2.value = 'medium';
-    option2.textContent = 'medium';
+    option2.textContent = 'Medium';
     const option3 = document.createElement('option');
     option3.value = 'high';
     option3.textContent = 'High';
