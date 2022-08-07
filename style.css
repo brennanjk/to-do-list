@@ -180,7 +180,9 @@ li>img {
     justify-items: center;
 }
 
-.task-form>div>input {
+.task-form>div>input,
+.task-form>div>select,
+#submit-btn {
     width: 15rem;
     padding: .2rem .5rem;
     color: var(--text-color2);
