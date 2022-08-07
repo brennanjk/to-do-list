@@ -71,6 +71,10 @@ function createContainer() {
     taskCheck.setAttribute('type','checkbox');
     const taskText = document.createElement('div');
     taskText.textContent = 'Test Task';
+    const taskPriority = document.createElement('div');
+    taskPriority.textContent = 'Low';
+    taskPriority.classList.add('low');
+    taskPriority.classList.add('priority');
     const taskDelete = document.createElement('button');
     taskDelete.classList.add('task-delete');
     taskDelete.textContent = 'X'
@@ -82,6 +86,7 @@ function createContainer() {
     
     testTask.appendChild(taskCheck);
     testTask.appendChild(taskText);
+    testTask.appendChild(taskPriority);
     testTask.appendChild(taskDelete);
     taskList.appendChild(testTask);
     container.appendChild(taskList);
