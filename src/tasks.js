@@ -33,8 +33,34 @@ function taskForm() {
     submitBtn.type = 'submit'; submitBtn.id = 'submit-btn';
     submitBtn.textContent = 'Create Task';
 
+    form.addEventListener("submit", submitTask);
+
     form.appendChild(taskDiv); form.appendChild(prioDiv); form.appendChild(submitBtn);
     container.appendChild(form);
+}
+
+const taskList = [];
+
+class task{
+
+    constructor(description, priority) {
+        this.description = description;
+        this.priority = priority;
+    };
+}
+
+function addTask(newTask) {
+    taskList.push(newTask);
+}
+
+function submitTask(event) {
+    const description = document.querySelector('[name="task"]').value;
+    const priority = document.querySelector('[name="Priority"]').value;
+    const newTask = new task(description, priority);
+
+    console.log(newTask);
+    event.preventDefault();
+    this.reset();
 }
 
 export default taskForm;
