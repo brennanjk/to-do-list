@@ -50,7 +50,33 @@ class task{
 }
 
 function addTask(newTask) {
+    //add task to taskList array
     taskList.push(newTask);
+
+    //add task to task list regardless of current view
+    const task = document.createElement('li');
+    task.classList.add('task');
+    const taskCheck = document.createElement('input');
+    taskCheck.classList.add('task-check');
+    taskCheck.setAttribute('type','checkbox');
+    const taskText = document.createElement('div');
+    taskText.textContent = `${newTask.description}`;
+    const taskPriority = document.createElement('div');
+    taskPriority.textContent = `${newTask.priority}`;
+    taskPriority.classList.add(`${newTask.priority}`);
+    taskPriority.classList.add('priority');
+    const taskDelete = document.createElement('button');
+    taskDelete.classList.add('task-delete');
+    taskDelete.textContent = 'X';
+    //append objects to task li element
+    task.appendChild(taskCheck);
+    task.appendChild(taskText);
+    task.appendChild(taskPriority);
+    task.appendChild(taskDelete);
+
+    //append new task to the taskList
+    const tasks = document.querySelector('.task-list');
+    tasks.appendChild(task);
 }
 
 function submitTask(event) {
