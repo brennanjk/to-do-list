@@ -110,6 +110,11 @@ li>img {
     border-radius: 5px;
 }
 
+.task:hover {
+    filter: drop-shadow(-.3rem .3rem 5px var(--bg-color1));
+    transform: scale(101%);
+}
+
 .task>input {
     appearance: none;
     position: relative;
