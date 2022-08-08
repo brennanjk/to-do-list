@@ -58,7 +58,8 @@ function submitTask(event) {
     const priority = document.querySelector('[name="Priority"]').value;
     const newTask = new task(description, priority);
 
-    console.log(newTask);
+    addTask(newTask);
+    console.log(taskList);
     event.preventDefault();
     this.reset();
     this.remove();
