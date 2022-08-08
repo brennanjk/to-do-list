@@ -61,6 +61,7 @@ function submitTask(event) {
     console.log(newTask);
     event.preventDefault();
     this.reset();
+    this.remove();
 }
 
 export default taskForm;
