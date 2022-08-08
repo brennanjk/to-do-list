@@ -164,7 +164,17 @@ li>img {
     height: 1rem;
     background-color: var(--bg-color5);
     margin-left: auto;
-    
+}
+
+.task-delete:hover {
+    transform: scale(110%);
+    background-color: var(--bg-color6);
+    color: var(--high-red);
+}
+
+.task-delete:active {
+    background-color: var(--high-red);
+    color: var(--bg-color6);
 }
 
 .add-task-btn {
