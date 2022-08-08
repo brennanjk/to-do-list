@@ -61,6 +61,7 @@ function addTask(newTask) {
     taskCheck.setAttribute('type','checkbox');
     const taskText = document.createElement('div');
     taskText.textContent = `${newTask.description}`;
+    taskText.classList.add('description');
     const taskPriority = document.createElement('div');
     taskPriority.textContent = `${newTask.priority}`;
     taskPriority.classList.add(`${newTask.priority}`);
@@ -68,6 +69,7 @@ function addTask(newTask) {
     const taskDelete = document.createElement('button');
     taskDelete.classList.add('task-delete');
     taskDelete.textContent = 'X';
+    taskDelete.addEventListener('click', removeTask);
     //append objects to task li element
     task.appendChild(taskCheck);
     task.appendChild(taskText);
@@ -77,6 +79,19 @@ function addTask(newTask) {
     //append new task to the taskList
     const tasks = document.querySelector('.task-list');
     tasks.appendChild(task);
+}
+
+function removeTask() {
+    //Create variable for the sibling task description div related to the delete button pressed
+    const descriptor = this.parentNode.querySelector('.description');
+    console.log(descriptor.textContent);
+
+    //Find task in taskList array and remove it
+    const taskIndex = taskList.findIndex(task => task.description === descriptor.textContent);
+    taskList.splice(taskIndex, 1);
+
+    //remove the HTML element from the DOM
+    this.parentNode.remove();
 }
 
 function submitTask(event) {
