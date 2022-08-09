@@ -59,6 +59,7 @@ function addTask(newTask) {
     const taskCheck = document.createElement('input');
     taskCheck.classList.add('task-check');
     taskCheck.setAttribute('type','checkbox');
+    taskCheck.addEventListener('click', toggleTask);
     const taskText = document.createElement('div');
     taskText.textContent = `${newTask.description}`;
     taskText.classList.add('description');
@@ -92,6 +93,20 @@ function removeTask() {
 
     //remove the HTML element from the DOM
     this.parentNode.remove();
+}
+
+function toggleTask() {
+    //Create variable for the parent element of the checked box
+    const checkParent = this.parentNode;
+
+    if (this.checked) {
+        checkParent.style.textDecoration = 'line-through';
+        checkParent.classList.add('completed');
+    }
+    else {
+        checkParent.style.textDecoration = 'none';
+        checkParent.classList.remove('completed');
+    }
 }
 
 function submitTask(event) {
