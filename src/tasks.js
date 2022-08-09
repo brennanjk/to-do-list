@@ -1,4 +1,4 @@
-import {addDays} from 'date-fns';
+import {addDays, format} from 'date-fns';
 
 function taskForm() {
     const container = document.querySelector('.container');
@@ -73,7 +73,10 @@ function addTask(newTask) {
     taskText.textContent = `${newTask.description}`;
     taskText.classList.add('description');
     const dueDate = document.createElement('div');
-    dueDate.textContent = `${newTask.dueDate}`;
+    const dateObject = new Date(newTask.dueDate);
+    //Adjust date object so it shows the local timezone, otherwise it will use UTC time and the returned date will be off
+    dateObject.setMinutes(dateObject.getMinutes() + dateObject.getTimezoneOffset());
+    dueDate.textContent = format(dateObject, "MM/dd/yy");
     dueDate.classList.add('due-date');
     const taskPriority = document.createElement('div');
     taskPriority.textContent = `${newTask.priority}`;
@@ -126,7 +129,6 @@ function submitTask(event) {
     const description = document.querySelector('[name="task"]').value;
     const priority = document.querySelector('[name="Priority"]').value;
     const dueDate = document.querySelector('[name="due-date"]').value;
-    console.log(dueDate);
     const newTask = new task(description, priority, dueDate);
 
     addTask(newTask);
