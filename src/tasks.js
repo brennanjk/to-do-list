@@ -51,9 +51,10 @@ const taskList = [];
 
 class task{
 
-    constructor(description, priority) {
+    constructor(description, priority, dueDate) {
         this.description = description;
         this.priority = priority;
+        this.dueDate = dueDate;
     };
 }
 
@@ -71,6 +72,9 @@ function addTask(newTask) {
     const taskText = document.createElement('div');
     taskText.textContent = `${newTask.description}`;
     taskText.classList.add('description');
+    const dueDate = document.createElement('div');
+    dueDate.textContent = `${newTask.dueDate}`;
+    dueDate.classList.add('due-date');
     const taskPriority = document.createElement('div');
     taskPriority.textContent = `${newTask.priority}`;
     taskPriority.classList.add(`${newTask.priority}`);
@@ -82,6 +86,7 @@ function addTask(newTask) {
     //append objects to task li element
     task.appendChild(taskCheck);
     task.appendChild(taskText);
+    task.appendChild(dueDate);
     task.appendChild(taskPriority);
     task.appendChild(taskDelete);
 
@@ -120,7 +125,9 @@ function toggleTask() {
 function submitTask(event) {
     const description = document.querySelector('[name="task"]').value;
     const priority = document.querySelector('[name="Priority"]').value;
-    const newTask = new task(description, priority);
+    const dueDate = document.querySelector('[name="due-date"]').value;
+    console.log(dueDate);
+    const newTask = new task(description, priority, dueDate);
 
     addTask(newTask);
     console.log(taskList);

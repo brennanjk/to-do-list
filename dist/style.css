@@ -152,8 +152,13 @@ li>img {
     border-radius: 5px;
 }
 
+.task>.due-date,
 .task>.priority {
     width: auto;
+}
+
+.task>.due-date {
+    border: none;
 }
 
 .task>.low {
