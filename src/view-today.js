@@ -25,8 +25,8 @@ function addTasks(tasks) {
 
     tasks.forEach(task => {
         
-        const taskToday = document.createElement('li');
-        taskToday.classList.add('task');
+        const taskDiv = document.createElement('li');
+        taskDiv.classList.add('task');
         const taskCheck = document.createElement('input');
         taskCheck.classList.add('task-check');
         taskCheck.setAttribute('type','checkbox');
@@ -49,14 +49,14 @@ function addTasks(tasks) {
         taskDelete.textContent = 'X';
         taskDelete.addEventListener('click', removeTask);
         //append objects to task li element
-        taskToday.appendChild(taskCheck);
-        taskToday.appendChild(taskText);
-        taskToday.appendChild(dueDate);
-        taskToday.appendChild(taskPriority);
-        taskToday.appendChild(taskDelete);
+        taskDiv.appendChild(taskCheck);
+        taskDiv.appendChild(taskText);
+        taskDiv.appendChild(dueDate);
+        taskDiv.appendChild(taskPriority);
+        taskDiv.appendChild(taskDelete);
 
         //append new task to the taskList
         const taskContainer = document.querySelector('.task-list');
-        taskContainer.appendChild(taskToday);
+        taskContainer.appendChild(taskDiv);
     })
 }
