@@ -2,6 +2,8 @@ import {addDays, format} from 'date-fns';
 
 export const taskList = [];
 
+export {removeTask, toggleTask};
+
 export default function taskForm() {
     const container = document.querySelector('.container');
 
