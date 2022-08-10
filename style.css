@@ -239,3 +239,7 @@ li>img {
     border-radius: 5px;
     font-size: .8rem;
 }
+
+#due-date {
+    width: 9rem;
+}
