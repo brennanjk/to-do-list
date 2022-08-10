@@ -30,12 +30,9 @@ function taskForm() {
     prioDiv.appendChild(prioSelect);
     prioSelect.appendChild(option1); prioSelect.appendChild(option2); prioSelect.appendChild(option3);
     const dateDiv = document.createElement('div');
-    const dateLabel = document.createElement('label');
-    dateLabel.for = 'due-date';
-    dateLabel.textContent = 'Due Date';
     const dateInput = document.createElement('input');
     dateInput.type = 'date'; dateInput.id = 'due-date'; dateInput.name = 'due-date'; dateInput.required = true;
-    dateDiv.appendChild(dateLabel); dateDiv.appendChild(dateInput);
+    dateDiv.appendChild(dateInput);
 
     const submitBtn = document.createElement('button');
     submitBtn.type = 'submit'; submitBtn.id = 'submit-btn';
