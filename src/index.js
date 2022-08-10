@@ -1,6 +1,6 @@
 import loadPage from "./page-load";
 import taskForm from "./tasks"
-import loadToday from "./today"
+import loadToday from "./view-today"
 
 loadPage();
 
