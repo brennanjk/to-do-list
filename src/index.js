@@ -1,6 +1,6 @@
 import loadPage from "./page-load";
 import taskForm from "./tasks"
-import addTasks from "./today"
+import loadToday from "./today"
 
 loadPage();
 
@@ -9,7 +9,7 @@ function addListeners() {
     const todayBtn = document.querySelector('.nav-today')
 
     addBtn.addEventListener('click', taskForm);
-    todayBtn.addEventListener('click',addTasks)
+    todayBtn.addEventListener('click',loadToday)
 }
 
 addListeners();

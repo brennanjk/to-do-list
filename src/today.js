@@ -2,10 +2,13 @@ import {format} from 'date-fns';
 import clearTasks from "./clear-tasks";
 import { taskList, removeTask, toggleTask } from "./tasks";
 
-function tasksToday() {
+export default function loadToday() {
     // clear task DOM elements
     clearTasks();
-    
+    addTasks(tasksToday());
+}
+
+function tasksToday() {    
     //create variable that will always be the current date when the function runs.
     const todaysDate = new Date();
     const formattedDate = format(todaysDate, "yyyy-MM-dd")
@@ -17,10 +20,8 @@ function tasksToday() {
     return todaysTasks
 }
 
-export default function addTasks() {
+function addTasks(tasks) {
     //write tasks to DOM from todaysTasks array
-    const tasks = tasksToday()
-    console.log(tasks);
 
     tasks.forEach(task => {
         
@@ -58,5 +59,4 @@ export default function addTasks() {
         const taskContainer = document.querySelector('.task-list');
         taskContainer.appendChild(taskToday);
     })
-
 }
