@@ -1,6 +1,8 @@
 import {addDays, format} from 'date-fns';
 
-function taskForm() {
+export const taskList = [];
+
+export default function taskForm() {
     const container = document.querySelector('.container');
 
     const form = document.createElement('form');
@@ -43,8 +45,6 @@ function taskForm() {
     form.appendChild(taskDiv); form.appendChild(prioDiv); form.appendChild(dateDiv); form.appendChild(submitBtn); 
     container.appendChild(form);
 }
-
-const taskList = [];
 
 class task{
 
@@ -134,5 +134,3 @@ function submitTask(event) {
     this.reset();
     this.remove();
 }
-
-export default taskForm;
