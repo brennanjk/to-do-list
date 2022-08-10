@@ -24,6 +24,7 @@ function createNav() {
 
     const item1 = document.createElement('li');
     item1.classList.add('nav-item');
+    item1.classList.add('nav-tasks');
     const image1 = document.createElement('img');
     image1.src = './images/tasks.svg'; image1.alt = 'tasks';
     const item1Text = document.createElement('div');
