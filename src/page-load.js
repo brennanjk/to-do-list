@@ -33,6 +33,7 @@ function createNav() {
 
     const item2 = document.createElement('li');
     item2.classList.add('nav-item');
+    item2.classList.add('nav-today');
     const image2 = document.createElement('img');
     image2.src = './images/date2.svg'; image2.alt = "today's tasks";
     const item2Text = document.createElement('div');
