@@ -59,6 +59,7 @@ class task{
         this.description = description;
         this.priority = priority;
         this.dueDate = dueDate;
+        this.completed = false;
     };
 }
 
@@ -126,6 +127,12 @@ function loadTask(task) {
             checkParent.style.textDecoration = 'none';
             checkParent.classList.remove('completed');
         }
+
+        //find related task object in task-list and change completed property to true
+        const descriptor = this.parentNode.querySelector('.description');
+        const taskIndex = taskList.findIndex(task => task.description === descriptor.textContent);
+        taskList[taskIndex].completed = true;
+        console.log(taskList[taskIndex].completed);
     }
 
     addTask(task);
