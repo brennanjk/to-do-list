@@ -1,6 +1,7 @@
 import {format} from 'date-fns';
 import clearTasks from "./clear-tasks";
-import { taskList, loadTask } from "./tasks";
+import { taskList } from './task-objects';
+import { loadTask } from "./tasks";
 
 export default function loadToday() {
     // clear task DOM elements
@@ -13,7 +14,7 @@ function tasksToday() {
     const todaysDate = new Date();
     const formattedDate = format(todaysDate, "yyyy-MM-dd")
     console.log(formattedDate)
-    console.log(taskList[0].dueDate)
+    console.log(taskList)
 
     const todaysTasks = taskList.filter(task => task.dueDate === formattedDate);
 
