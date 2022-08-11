@@ -118,6 +118,7 @@ li>img {
 
 .task.completed {
     filter: grayscale(100%) brightness(75%) opacity(50%);
+    text-decoration: line-through;
 }
 
 .task>input {
