@@ -1,6 +1,6 @@
 import {addDays, format} from 'date-fns';
 
-export const taskList = [];
+import { taskList, task } from './task-objects';
 
 function addToList(newTask) {
     //add task to taskList array
@@ -51,16 +51,6 @@ export default function taskForm() {
 
     form.appendChild(taskDiv); form.appendChild(prioDiv); form.appendChild(dateDiv); form.appendChild(submitBtn); 
     container.appendChild(form);
-}
-
-class task{
-
-    constructor(description, priority, dueDate) {
-        this.description = description;
-        this.priority = priority;
-        this.dueDate = dueDate;
-        this.completed = false;
-    };
 }
 
 function loadTask(task) {
