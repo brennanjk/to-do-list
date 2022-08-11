@@ -1,11 +1,5 @@
-import {addDays, format} from 'date-fns';
-
+import {format} from 'date-fns';
 import { taskList, task } from './task-objects';
-
-function addToList(newTask) {
-    //add task to taskList array
-    taskList.push(newTask);
-}
 
 export {loadTask};
 
@@ -53,6 +47,28 @@ export default function taskForm() {
     container.appendChild(form);
 }
 
+//Function to trigger on taskForm submit
+function submitTask(event) {
+    const description = document.querySelector('[name="task"]').value;
+    const priority = document.querySelector('[name="Priority"]').value;
+    const dueDate = document.querySelector('[name="due-date"]').value;
+    const newTask = new task(description, priority, dueDate);
+
+    addToList(newTask);
+    loadTask(newTask);
+    console.log(taskList);
+    event.preventDefault();
+    this.reset();
+    this.remove();
+}
+
+//function to trigger within submitTask that adds the newly created task object to our taskList array
+function addToList(newTask) {
+    //add task to taskList array
+    taskList.push(newTask);
+}
+
+//function that adds tasks to the Dom, both when submitting a new task, or when changing page views
 function loadTask(task) {
 
     function addTask(newTask) {
@@ -133,18 +149,4 @@ function loadTask(task) {
     }
 
     addTask(task);
-}
-
-function submitTask(event) {
-    const description = document.querySelector('[name="task"]').value;
-    const priority = document.querySelector('[name="Priority"]').value;
-    const dueDate = document.querySelector('[name="due-date"]').value;
-    const newTask = new task(description, priority, dueDate);
-
-    addToList(newTask);
-    loadTask(newTask);
-    console.log(taskList);
-    event.preventDefault();
-    this.reset();
-    this.remove();
 }
