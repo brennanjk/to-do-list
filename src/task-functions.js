@@ -45,6 +45,9 @@ export default function taskForm() {
 
     form.appendChild(taskDiv); form.appendChild(prioDiv); form.appendChild(dateDiv); form.appendChild(submitBtn); 
     container.appendChild(form);
+
+    //disable new task button when this form is triggered
+    toggleAddBtn();
 }
 
 //Function to trigger on taskForm submit
@@ -66,6 +69,9 @@ function submitTask(event) {
         event.preventDefault();
         this.reset();
         this.remove();
+
+        //re-enable add task button
+        toggleAddBtn();
     }
 }
 
@@ -73,6 +79,18 @@ function submitTask(event) {
 function addToList(newTask) {
     //add task to taskList array
     taskList.push(newTask);
+}
+
+//function to toggle the new task button off and on when the new task form is active
+
+function toggleAddBtn() {
+    const addBtn = document.querySelector('.add-task-btn');
+    if (addBtn.disabled === false) {
+        addBtn.disabled = true;
+    }
+    else {
+        addBtn.disabled = false;
+    }
 }
 
 //function that adds tasks to the Dom, both when submitting a new task, or when changing page views
