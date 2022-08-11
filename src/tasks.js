@@ -71,6 +71,11 @@ function loadTask(task) {
         task.classList.add('task');
         const taskCheck = document.createElement('input');
         taskCheck.classList.add('task-check');
+        //check if new task 'completed' key has a value of true; if yes add completed class so tasks will remain checked when switching between different page views
+        if (newTask.completed === true) {
+            task.classList.add('completed');
+            taskCheck.checked = true;
+        };
         taskCheck.setAttribute('type','checkbox');
         taskCheck.addEventListener('click', toggleTask);
         const taskText = document.createElement('div');
@@ -118,21 +123,25 @@ function loadTask(task) {
     function toggleTask() {
         //Create variable for the parent element of the checked box
         const checkParent = this.parentNode;
+        //find related task object in task-list
+        const descriptor = this.parentNode.querySelector('.description');
 
         if (this.checked) {
             checkParent.style.textDecoration = 'line-through';
             checkParent.classList.add('completed');
+            //change completed key value to 'true' for related taskList object
+            const taskIndex = taskList.findIndex(task => task.description === descriptor.textContent);
+            taskList[taskIndex].completed = true;
+            console.log(taskList[taskIndex].completed);
         }
         else {
             checkParent.style.textDecoration = 'none';
             checkParent.classList.remove('completed');
+            //change completed key value to 'false' for related taskList object
+            const taskIndex = taskList.findIndex(task => task.description === descriptor.textContent);
+            taskList[taskIndex].completed = false;
+            console.log(taskList[taskIndex].completed);
         }
-
-        //find related task object in task-list and change completed property to true
-        const descriptor = this.parentNode.querySelector('.description');
-        const taskIndex = taskList.findIndex(task => task.description === descriptor.textContent);
-        taskList[taskIndex].completed = true;
-        console.log(taskList[taskIndex].completed);
     }
 
     addTask(task);
