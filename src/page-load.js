@@ -44,6 +44,7 @@ function createNav() {
 
     const item3 = document.createElement('li');
     item3.classList.add('nav-item');
+    item3.classList.add('nav-week');
     const image3 = document.createElement('img');
     image3.src = './images/calendar.svg'; image3.alt = "this week's tasks";
     const item3Text = document.createElement('div');
