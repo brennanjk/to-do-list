@@ -127,7 +127,6 @@ function loadTask(task) {
         const descriptor = this.parentNode.querySelector('.description');
 
         if (this.checked) {
-            checkParent.style.textDecoration = 'line-through';
             checkParent.classList.add('completed');
             //change completed key value to 'true' for related taskList object
             const taskIndex = taskList.findIndex(task => task.description === descriptor.textContent);
@@ -135,7 +134,6 @@ function loadTask(task) {
             console.log(taskList[taskIndex].completed);
         }
         else {
-            checkParent.style.textDecoration = 'none';
             checkParent.classList.remove('completed');
             //change completed key value to 'false' for related taskList object
             const taskIndex = taskList.findIndex(task => task.description === descriptor.textContent);
