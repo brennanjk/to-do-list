@@ -1,7 +1,7 @@
 import {format} from 'date-fns';
 import clearTasks from "./clear-tasks";
 import { taskList } from './task-objects';
-import { loadTask } from "./tasks";
+import { loadTask } from "./task-functions";
 
 export default function loadToday() {
     // clear task DOM elements
