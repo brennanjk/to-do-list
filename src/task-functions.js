@@ -53,13 +53,20 @@ function submitTask(event) {
     const priority = document.querySelector('[name="Priority"]').value;
     const dueDate = document.querySelector('[name="due-date"]').value;
     const newTask = new task(description, priority, dueDate);
-
-    addToList(newTask);
-    loadTask(newTask);
-    console.log(taskList);
-    event.preventDefault();
-    this.reset();
-    this.remove();
+    //check if a task with this description already exists
+    const duplicateCheck = taskList.find(task => task.description === description);
+    if (duplicateCheck) {
+        alert("A task with that name already exists. Please enter a different name");
+        event.preventDefault();
+    }
+    else {
+        addToList(newTask);
+        loadTask(newTask);
+        console.log(taskList);
+        event.preventDefault();
+        this.reset();
+        this.remove();
+    }
 }
 
 //function to trigger within submitTask that adds the newly created task object to our taskList array
