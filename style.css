@@ -216,7 +216,7 @@ li>img {
 
 .task-form {
     position: absolute;
-    right: 0; left: 0;
+    right: 0; left: 0; top: 30%;
     margin-right: auto; margin-left: auto;
     width: 30rem;
     height: 15rem;
