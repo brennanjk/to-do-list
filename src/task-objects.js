@@ -4,9 +4,9 @@ let taskList = [];
 
 //check if taskList is saved in session storage
 function taskStorageCheck() {
-    if (sessionStorage.getItem('taskList')) {
-        const sessionTaskList = JSON.parse(sessionStorage.getItem("taskList"));
-        taskList = sessionTaskList;
+    if (localStorage.getItem('taskList')) {
+        const localTaskList = JSON.parse(localStorage.getItem("taskList"));
+        taskList = localTaskList;
         console.log(`The task list is ${taskList}`)
     }
 }
