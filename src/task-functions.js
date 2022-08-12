@@ -1,5 +1,6 @@
 import {format} from 'date-fns';
 import { taskList, task } from './task-objects';
+import { storeTaskList } from './storage/storage';
 
 export {loadTask};
 
@@ -79,6 +80,9 @@ function submitTask(event) {
 function addToList(newTask) {
     //add task to taskList array
     taskList.push(newTask);
+
+    //update taskList session storage
+    storeTaskList();
 }
 
 //function to toggle the new task button off and on when the new task form is active
