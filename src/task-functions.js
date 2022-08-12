@@ -1,5 +1,6 @@
 import {format} from 'date-fns';
 import { taskList, task } from './task-objects';
+import { storeTaskList } from './storage/storage';
 
 export {loadTask};
 
@@ -79,6 +80,9 @@ function submitTask(event) {
 function addToList(newTask) {
     //add task to taskList array
     taskList.push(newTask);
+
+    //update taskList session storage
+    storeTaskList();
 }
 
 //function to toggle the new task button off and on when the new task form is active
@@ -146,6 +150,8 @@ function loadTask(task) {
         //Find task in taskList array and remove it
         const taskIndex = taskList.findIndex(task => task.description === descriptor.textContent);
         taskList.splice(taskIndex, 1);
+        //update session storage tasklist
+        storeTaskList();
 
         //remove the HTML element from the DOM
         this.parentNode.remove();
@@ -163,6 +169,8 @@ function loadTask(task) {
             const taskIndex = taskList.findIndex(task => task.description === descriptor.textContent);
             taskList[taskIndex].completed = true;
             console.log(taskList[taskIndex].completed);
+            //update stored taskList
+            storeTaskList();
         }
         else {
             checkParent.classList.remove('completed');
@@ -170,6 +178,8 @@ function loadTask(task) {
             const taskIndex = taskList.findIndex(task => task.description === descriptor.textContent);
             taskList[taskIndex].completed = false;
             console.log(taskList[taskIndex].completed);
+            //update stored taskList
+            storeTaskList();
         }
     }
 

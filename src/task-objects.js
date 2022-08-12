@@ -1,6 +1,15 @@
-export {taskList, task};
+export {taskStorageCheck, taskList, task};
 
-const taskList = [];
+let taskList = [];
+
+//check if taskList is saved in session storage
+function taskStorageCheck() {
+    if (localStorage.getItem('taskList')) {
+        const localTaskList = JSON.parse(localStorage.getItem("taskList"));
+        taskList = localTaskList;
+        console.log(`The task list is ${taskList}`)
+    }
+}
 
 class task{
 

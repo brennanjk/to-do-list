@@ -1,3 +1,6 @@
+import { taskStorageCheck } from "./task-objects";
+import loadTasks from "./view-all";
+
 const content = document.getElementById('content');
 
 function createHeader() {
@@ -111,10 +114,15 @@ function createFooter() {
 }
 
 function loadPage() {
+    //Load DOM elements
     createHeader();
     createNav();
     createContainer();
     createFooter();
+
+    //Update task list if storage is available, then loadtasks so they populate at page load if available
+    taskStorageCheck();
+    loadTasks();
 }
 
 export default loadPage;
