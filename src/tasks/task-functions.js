@@ -2,7 +2,7 @@ import {format} from 'date-fns';
 import { taskList, task } from './task-objects';
 import { storeTaskList } from '../storage/storage';
 
-export {loadTask};
+export {loadTask, toggleAddBtn};
 
 export default function taskForm() {
     const container = document.querySelector('.container');
