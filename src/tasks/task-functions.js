@@ -1,6 +1,6 @@
 import {format} from 'date-fns';
 import { taskList, task } from './task-objects';
-import { storeTaskList } from './storage/storage';
+import { storeTaskList } from '../storage/storage';
 
 export {loadTask};
 

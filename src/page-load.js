@@ -1,4 +1,4 @@
-import { taskStorageCheck } from "./task-objects";
+import { taskStorageCheck } from "./tasks/task-objects";
 import loadTasks from "./views/view-all";
 
 const content = document.getElementById('content');

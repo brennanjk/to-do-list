@@ -1,4 +1,4 @@
-import { taskList } from '../task-objects'
+import { taskList } from '../tasks/task-objects'
 
 export {storeTaskList};
 

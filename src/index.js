@@ -1,5 +1,5 @@
 import loadPage from "./page-load";
-import taskForm from "./task-functions"
+import taskForm from "./tasks/task-functions"
 import loadTasks from "./views/view-all"
 import loadToday from "./views/view-today"
 import loadWeek from "./views/view-week"
