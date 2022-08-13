@@ -33,10 +33,27 @@ function submitProject(event) {
     const name = document.querySelector('[name="project"]').value;
 
     const newProject = new project(name);
-    console.log(newProject);
+    addProject(newProject);
+    console.log(projectList);
+    loadProject(newProject);
 
     //prevent submit button from refreshing the page; clear content and remove form
     event.preventDefault();
     this.reset();
     this.remove();
+}
+
+function addProject(newProject) {
+    projectList.push(newProject);
+}
+
+function loadProject(newProject) {
+    const projectNavList = document.querySelector('.projects-nav-list');
+
+    const project = document.createElement('li');
+    project.classList.add('project');
+    project.textContent = newProject.name;
+
+    //append elements to Dom
+    projectNavList.appendChild(project);
 }
