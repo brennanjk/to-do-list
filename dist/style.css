@@ -235,7 +235,8 @@ li>img {
     filter: invert(100%);
 }
 
-.task-form {
+.task-form,
+.project-form {
     position: absolute;
     right: 0; left: 0; top: 30%;
     margin-right: auto; margin-left: auto;
@@ -252,7 +253,9 @@ li>img {
 
 .task-form>div>input,
 .task-form>div>select,
-#submit-btn {
+.project-form>div>input,
+#submit-btn,
+#submit-project-btn {
     width: 15rem;
     padding: .2rem .5rem;
     color: var(--text-color2);
