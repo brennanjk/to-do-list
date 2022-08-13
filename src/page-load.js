@@ -55,11 +55,26 @@ function createNav() {
     item3.appendChild(image3);
     item3.appendChild(item3Text);
 
-    //append items to the ul, the ul to the navbar, and the navbar to content
+    //append items to the ul, the ul to the navbar
     ul.appendChild(item1);
     ul.appendChild(item2);
     ul.appendChild(item3);
     navBar.appendChild(ul);
+
+    //Create Projects section
+    const projectsNav = document.createElement('div');
+    projectsNav.classList.add('projects-nav');
+    projectsNav.textContent = 'Projects';
+    const projectsList = document.createElement('ul');
+    projectsList.classList = 'projects-nav-list';
+    const projectBtn = document.createElement('button');
+    projectBtn.classList = 'add-project-btn';
+    projectBtn.textContent = 'New Project';
+
+    //append project nav elements together, append nav-bar to content
+    projectsNav.appendChild(projectsList);
+    projectsNav.appendChild(projectBtn);
+    navBar.appendChild(projectsNav);
     content.appendChild(navBar);
 }
 
@@ -74,11 +89,6 @@ function createContainer() {
     btn.classList.add('add-task-btn');
     btn.textContent = '+';
     
-    testTask.appendChild(taskCheck);
-    testTask.appendChild(taskText);
-    testTask.appendChild(taskPriority);
-    testTask.appendChild(taskDelete);
-    taskList.appendChild(testTask);
     container.appendChild(taskList);
     container.appendChild(btn);
     content.appendChild(container);
