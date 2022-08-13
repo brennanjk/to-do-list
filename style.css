@@ -72,7 +72,8 @@ body {
     gap: .5rem;
 }
 
-.nav-item {
+.nav-item,
+.project {
     list-style: none;
     display: flex;
     gap: 1rem;
@@ -81,7 +82,13 @@ body {
     border-radius: 15px;
 }
 
-.nav-item:hover {
+.project {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.nav-item:hover,
+.project:hover {
     background-color: var(--bg-color2-dark);
 }
 
@@ -98,7 +105,7 @@ body {
 
 .add-project-btn {
     font-size: .65em;
-    border: none;
+    border: solid 1px var(--bg-color1);
     background-color: var(--bg-color2);
     border-radius: 15px;
     height: 1.5rem;
