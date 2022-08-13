@@ -1,4 +1,5 @@
 import { toggleAddBtn } from "../tasks/task-functions";
+import { projectList, project } from "./project-objects";
 
 export default function projectForm() {
     const container = document.querySelector('.container');
@@ -19,11 +20,23 @@ export default function projectForm() {
     submitBtn.type = 'submit'; submitBtn.id = 'submit-project-btn';
     submitBtn.textContent = 'Create Project';
 
-    //form.addEventListener("submit", submitProject);// NEED TO CREATE FUNCTION FOR EVENT LISTENER
+    form.addEventListener("submit", submitProject);
 
     form.appendChild(projectDiv); form.appendChild(submitBtn); 
     container.appendChild(form);
 
     //disable new task button when this form is triggered
     toggleAddBtn();
+}
+
+function submitProject(event) {
+    const name = document.querySelector('[name="project"]').value;
+
+    const newProject = new project(name);
+    console.log(newProject);
+
+    //prevent submit button from refreshing the page; clear content and remove form
+    event.preventDefault();
+    this.reset();
+    this.remove();
 }
