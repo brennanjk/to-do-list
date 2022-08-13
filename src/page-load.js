@@ -69,22 +69,6 @@ function createContainer() {
     const taskList = document.createElement('ul');
     taskList.classList.add('task-list');
 
-    //Static task for testing purposes
-    const testTask = document.createElement('li');
-    testTask.classList.add('task');
-    const taskCheck = document.createElement('input');
-    taskCheck.classList.add('task-check');
-    taskCheck.setAttribute('type','checkbox');
-    const taskText = document.createElement('div');
-    taskText.textContent = 'Test Task';
-    const taskPriority = document.createElement('div');
-    taskPriority.textContent = 'Low';
-    taskPriority.classList.add('low');
-    taskPriority.classList.add('priority');
-    const taskDelete = document.createElement('button');
-    taskDelete.classList.add('task-delete');
-    taskDelete.textContent = 'X'
-
     //button to add new tasks
     const btn = document.createElement('button');
     btn.classList.add('add-task-btn');
