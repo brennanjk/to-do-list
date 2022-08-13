@@ -1,8 +1,8 @@
 import loadPage from "./page-load";
 import taskForm from "./task-functions"
-import loadTasks from "./view-all"
-import loadToday from "./view-today"
-import loadWeek from "./view-week"
+import loadTasks from "./views/view-all"
+import loadToday from "./views/view-today"
+import loadWeek from "./views/view-week"
 
 loadPage();
 
