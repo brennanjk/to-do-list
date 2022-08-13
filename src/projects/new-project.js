@@ -41,6 +41,9 @@ function submitProject(event) {
     event.preventDefault();
     this.reset();
     this.remove();
+
+    //toggle add task button back on
+    toggleAddBtn();
 }
 
 function addProject(newProject) {
