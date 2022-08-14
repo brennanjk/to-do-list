@@ -219,7 +219,8 @@ li>img {
     color: var(--bg-color6);
 }
 
-.add-task-btn {
+.add-task-btn,
+.add-project-task-btn {
     font-size: 1.5rem;
     width: 5rem;
     background-color: var(--bg-color4);
@@ -227,13 +228,15 @@ li>img {
 }
 
 .add-project-btn:hover,
-.add-task-btn:hover {
+.add-task-btn:hover,
+.add-project-task-btn:hover {
     filter: brightness(120%);
     cursor: pointer;
 }
 
 .add-project-btn:active,
-.add-task-btn:active {
+.add-task-btn:active,
+.add-project-task-btn:active {
     color: var(--bg-color4);
     background-color: var(--bg-color1);
 }
