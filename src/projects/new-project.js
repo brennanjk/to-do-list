@@ -1,5 +1,6 @@
 import { toggleAddBtn } from "../tasks/task-functions";
 import { projectList, project } from "./project-objects";
+import loadProjectView from "../views/view-project";
 
 export default function projectForm() {
     const container = document.querySelector('.container');
@@ -65,4 +66,7 @@ function loadProject(newProject) {
     project.appendChild(projectImage);
     project.appendChild(projectName);
     projectNavList.appendChild(project);
+
+    //add event listener so clicking on the project loads that projects view/tasks
+    project.addEventListener('click', loadProjectView);
 }
