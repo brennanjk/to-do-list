@@ -1,3 +1,6 @@
+import { task } from "../tasks/task-objects";
+import { toggleAddBtn } from "../tasks/task-functions";
+
 export {projectTaskButton};
 
 function projectTaskButton() {
@@ -9,13 +12,14 @@ function projectTaskButton() {
     const btn = document.createElement('button');
     btn.classList.add('add-project-task-btn');
     btn.textContent = '+';
+    btn.addEventListener('click', projectTaskForm);
 
     //append new button to DOM
     const container = document.querySelector('.container');
     container.appendChild(btn);
 }
 
-/* export default function projectTaskForm() {
+function projectTaskForm() {
     const container = document.querySelector('.container');
 
     const form = document.createElement('form');
@@ -60,4 +64,35 @@ function projectTaskButton() {
 
     //disable new task button when this form is triggered
     toggleAddBtn();
-} */
+}
+
+//Function to trigger on projectTaskForm submit
+function submitTask(event) {
+
+    const description = document.querySelector('[name="project-task"]').value;
+    const priority = document.querySelector('[name="Priority"]').value;
+    const dueDate = document.querySelector('[name="due-date"]').value;
+    const newTask = new task(description, priority, dueDate);
+    console.log(newTask);
+    event.preventDefault();
+    this.reset();
+    this.remove();
+    
+    /* //check if a task with this description already exists
+    const duplicateCheck = taskList.find(task => task.description === description);
+    if (duplicateCheck) {
+        alert("A task with that name already exists. Please enter a different name");
+        event.preventDefault();
+    }
+    else {
+        addToList(newTask);
+        loadTask(newTask);
+        console.log(taskList);
+        event.preventDefault();
+        this.reset();
+        this.remove();
+
+        //re-enable add task button
+        toggleAddBtn();
+    } */
+}

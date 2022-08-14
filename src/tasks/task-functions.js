@@ -88,12 +88,23 @@ function addToList(newTask) {
 //function to toggle the new task button off and on when the new task form is active
 
 function toggleAddBtn() {
-    const addBtn = document.querySelector('.add-task-btn');
-    if (addBtn.disabled === false) {
-        addBtn.disabled = true;
-    }
-    else {
-        addBtn.disabled = false;
+
+    if (document.querySelector('.add-task-btn')) {
+        const addBtn = document.querySelector('.add-task-btn');
+        if (addBtn.disabled === false) {
+            addBtn.disabled = true;
+        }
+        else {
+            addBtn.disabled = false;
+        }
+    } else {
+        const addBtn = document.querySelector('.add-project-task-btn');
+        if (addBtn.disabled === false) {
+            addBtn.disabled = true;
+        }
+        else {
+            addBtn.disabled = false;
+        }
     }
 }
 
