@@ -1,5 +1,6 @@
 import { task } from "../tasks/task-objects";
 import { toggleAddBtn } from "../tasks/task-functions";
+import { projectList } from "./project-objects";
 
 export {projectTaskButton};
 
@@ -78,25 +79,26 @@ function submitTask(event) {
     const dueDate = document.querySelector('[name="due-date"]').value;
     const newTask = new task(description, priority, dueDate);
     console.log(newTask);
-    event.preventDefault();
-    this.reset();
-    this.remove();
-    
-    /* //check if a task with this description already exists
-    const duplicateCheck = taskList.find(task => task.description === description);
+
+    //find active project
+    const activeProject = projectList.find(project => project.active === true);
+    console.log(activeProject);
+
+    //check if a task with this description already exists
+    const duplicateCheck = activeProject.projectTasks.find(task => task.description === description);
     if (duplicateCheck) {
         alert("A task with that name already exists. Please enter a different name");
         event.preventDefault();
     }
     else {
-        addToList(newTask);
-        loadTask(newTask);
-        console.log(taskList);
+        activeProject.projectTasks.push(newTask);
+        // loadTask(newTask);
+        console.log(activeProject.projectTasks);
         event.preventDefault();
         this.reset();
         this.remove();
 
         //re-enable add task button
         toggleAddBtn();
-    } */
+    }
 }
