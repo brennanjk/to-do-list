@@ -102,6 +102,10 @@ body {
     font-weight: 500;
 }
 
+.projects-nav>div {
+    display: flex;
+    gap: 1rem;
+}
 
 .add-project-btn {
     font-size: .65em;
@@ -116,6 +120,7 @@ body {
     width: 2rem;
 }
 
+.projects-nav>div>img,
 li>img {
     width: 1.2rem;
 }
