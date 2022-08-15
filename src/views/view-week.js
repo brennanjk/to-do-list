@@ -1,12 +1,13 @@
 import {isSameWeek} from 'date-fns';
 import clearTasks from "../tasks/clear-tasks";
 import { taskList } from '../tasks/task-objects';
-import { loadTask } from "../tasks/task-functions";
+import { loadTask, addTaskButton } from "../tasks/task-functions";
 
 export default function loadWeek() {
 // clear task DOM elements
 clearTasks();
 addTasks(tasksThisWeek());
+addTaskButton();
 }
 
 function tasksThisWeek() { 

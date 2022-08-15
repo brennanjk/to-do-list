@@ -2,7 +2,7 @@ import {format} from 'date-fns';
 import { taskList, task } from './task-objects';
 import { storeTaskList } from '../storage/storage';
 
-export {loadTask, toggleAddBtn};
+export {loadTask, toggleAddBtn, addTaskButton};
 
 export default function taskForm() {
     const container = document.querySelector('.container');
@@ -105,6 +105,24 @@ function toggleAddBtn() {
         else {
             addBtn.disabled = false;
         }
+    }
+}
+
+function addTaskButton() {
+    if (document.querySelector('.add-project-task-btn')) {
+        //remove the add project task button
+        const addProjectTaskBtn = document.querySelector('.add-project-task-btn');
+        addProjectTaskBtn.remove();
+
+        //replace with regular add task button
+        const btn = document.createElement('button');
+        btn.classList.add('add-task-btn');
+        btn.textContent = '+';
+        btn.addEventListener('click', taskForm);
+
+        //attach button to task pane container
+        const container = document.querySelector('.container');
+        container.appendChild(btn);
     }
 }
 
