@@ -1,5 +1,5 @@
 import clearTasks from "../tasks/clear-tasks";
-import { loadTask } from "../tasks/task-functions";
+import { loadProjectTask } from "../projects/project-tasks";
 import { projectTaskButton } from "../projects/project-tasks";
 import { activeProject } from "../projects/project-objects";
 import { projectList } from "../projects/project-objects";
@@ -17,7 +17,7 @@ function addProjectTasks() {
 
     function loadTasks(tasks) {
         tasks.forEach(task => {
-            loadTask(task);
+            loadProjectTask(task);
         });
     }
     loadTasks(activeProject.projectTasks);
