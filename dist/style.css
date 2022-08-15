@@ -85,6 +85,7 @@ body {
 .project {
     font-size: 1rem;
     font-weight: 400;
+    padding-left: 1rem;
 }
 
 .nav-item:hover,

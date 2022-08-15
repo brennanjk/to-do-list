@@ -56,15 +56,9 @@ function loadProject(newProject) {
 
     const project = document.createElement('li');
     project.classList.add('project');
-    const projectImage = document.createElement('img');
-    projectImage.src = '../dist/images/blueprint.svg';
-    projectImage.alt = 'project icon';
-    const projectName = document.createElement('div');
-    projectName.textContent = newProject.name;
+    project.textContent = newProject.name;
 
     //append elements to Dom
-    project.appendChild(projectImage);
-    project.appendChild(projectName);
     projectNavList.appendChild(project);
 
     //add event listener so clicking on the project loads that projects view/tasks
