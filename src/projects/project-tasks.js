@@ -1,5 +1,5 @@
 import { task } from "../tasks/task-objects";
-import { toggleAddBtn } from "../tasks/task-functions";
+import { toggleAddBtn, loadTask } from "../tasks/task-functions";
 import { projectList } from "./project-objects";
 
 export {projectTaskButton};
@@ -92,7 +92,7 @@ function submitTask(event) {
     }
     else {
         activeProject.projectTasks.push(newTask);
-        // loadTask(newTask);
+        loadTask(newTask);
         console.log(activeProject.projectTasks);
         event.preventDefault();
         this.reset();
