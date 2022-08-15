@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { task } from "../tasks/task-objects";
 import { toggleAddBtn } from "../tasks/task-functions";
-import { projectList } from "./project-objects";
+import { projectList, getActiveProject } from "./project-objects";
 
 export {projectTaskButton, loadProjectTask};
 
@@ -121,11 +121,12 @@ function loadProjectTask(task) {
         const descriptor = this.parentNode.querySelector('.description');
         console.log(descriptor.textContent);
 
-        //Find Active project
-        const activeProject = projectList.find(project => project.active === true);
+        //set variable for active project
+        const activeProjectTasks = getActiveProject().projectTasks;
+
         //Find task in active project projectTasks array and remove it
-        const taskIndex = activeProject.projectTasks.findIndex(task => task.description === descriptor.textContent);
-        activeProject.projectTasks.splice(taskIndex, 1);
+        const taskIndex = activeProjectTasks.findIndex(task => task.description === descriptor.textContent);
+        activeProjectTasks.splice(taskIndex, 1);
         //update session storage tasklist
         //storeTaskList();
 
@@ -139,23 +140,23 @@ function loadProjectTask(task) {
         //create variable for task name
         const descriptor = this.parentNode.querySelector('.description');
         //find active task
-        const activeProject = projectList.find(project => project.active === true);
+        const activeProjectTasks = getActiveProject().projectTasks;
 
         if (this.checked) {
             checkParent.classList.add('completed');
             //change completed key value to 'true' for related taskList object
-            const taskIndex = activeProject.projectTasks.findIndex(task => task.description === descriptor.textContent);
-            activeProject.projectTasks[taskIndex].completed = true;
-            console.log(activeProject.projectTasks[taskIndex].completed);
+            const taskIndex = activeProjectTasks.findIndex(task => task.description === descriptor.textContent);
+            activeProjectTasks[taskIndex].completed = true;
+            console.log(activeProjectTasks[taskIndex].completed);
             //update stored taskList
             //storeTaskList();
         }
         else {
             checkParent.classList.remove('completed');
             //change completed key value to 'false' for related taskList object
-            const taskIndex = activeProject.projectTasks.findIndex(task => task.description === descriptor.textContent);
-            activeProject.projectTasks[taskIndex].completed = false;
-            console.log(taskList[taskIndex].completed);
+            const taskIndex = activeProjectTasks.findIndex(task => task.description === descriptor.textContent);
+            activeProjectTasks[taskIndex].completed = false;
+            console.log(activeProjectTasks[taskIndex].completed);
             //update stored taskList
             //storeTaskList();
         }
@@ -171,21 +172,21 @@ function submitTask(event) {
     const dueDate = document.querySelector('[name="due-date"]').value;
     const newTask = new task(description, priority, dueDate);
     console.log(newTask);
+    event.preventDefault();
 
     //find active project
-    const activeProject = projectList.find(project => project.active === true);
-    console.log(activeProject);
+    const activeProjectTasks = getActiveProject().projectTasks;
 
     //check if a task with this description already exists
-    const duplicateCheck = activeProject.projectTasks.find(task => task.description === description);
+    const duplicateCheck = activeProjectTasks.find(task => task.description === description);
     if (duplicateCheck) {
         alert("A task with that name already exists. Please enter a different name");
         event.preventDefault();
     }
     else {
-        activeProject.projectTasks.push(newTask);
+        activeProjectTasks.push(newTask);
         loadProjectTask(newTask);
-        console.log(activeProject.projectTasks);
+        console.log(activeProjectTasks);
         event.preventDefault();
         this.reset();
         this.remove();

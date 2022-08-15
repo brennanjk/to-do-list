@@ -1,6 +1,6 @@
 
 
-export {projectList, project, activeProject};
+export {projectList, project, setActiveProject, getActiveProject};
 
 let projectList = []
 
@@ -13,7 +13,7 @@ class project{
     }
 }
 
-function activeProject() {
+function setActiveProject() {
     //ensure no other projects are set as active
     projectList.forEach(project => project.active = false);
 
@@ -28,3 +28,10 @@ function activeProject() {
     projectList[projectIndex].active = true;
     console.log(projectList[projectIndex]);
 }
+
+function getActiveProject() {
+    const activeProject = projectList.find(project => project.active === true);
+
+    return activeProject;
+}
+
