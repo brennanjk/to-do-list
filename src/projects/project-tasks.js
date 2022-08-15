@@ -4,19 +4,23 @@ import { toggleAddBtn } from "../tasks/task-functions";
 export {projectTaskButton};
 
 function projectTaskButton() {
-    //remove existing add task button
-    const taskBtn = document.querySelector('.add-task-btn');
-    taskBtn.remove();
+    //check if default add task button is in the DOM, and if so remove it and add the project task button
 
-    //create and add new project task button
-    const btn = document.createElement('button');
-    btn.classList.add('add-project-task-btn');
-    btn.textContent = '+';
-    btn.addEventListener('click', projectTaskForm);
+    if (document.querySelector('.add-task-btn')) {
+        //remove existing add task button
+        const taskBtn = document.querySelector('.add-task-btn');
+        taskBtn.remove();
 
-    //append new button to DOM
-    const container = document.querySelector('.container');
-    container.appendChild(btn);
+        //create and add new project task button
+        const btn = document.createElement('button');
+        btn.classList.add('add-project-task-btn');
+        btn.textContent = '+';
+        btn.addEventListener('click', projectTaskForm);
+
+        //append new button to DOM
+        const container = document.querySelector('.container');
+        container.appendChild(btn);
+    }
 }
 
 function projectTaskForm() {
