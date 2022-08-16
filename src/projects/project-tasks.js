@@ -1,7 +1,8 @@
 import { format } from "date-fns";
 import { task } from "../tasks/task-objects";
 import { toggleAddBtn } from "../tasks/task-functions";
-import { projectList, getActiveProject } from "./project-objects";
+import { getActiveProject } from "./project-objects";
+import { storeProjectList } from "../storage/storage";
 
 export {projectTaskButton, loadProjectTask};
 
@@ -127,8 +128,8 @@ function loadProjectTask(task) {
         //Find task in active project projectTasks array and remove it
         const taskIndex = activeProjectTasks.findIndex(task => task.description === descriptor.textContent);
         activeProjectTasks.splice(taskIndex, 1);
-        //update session storage tasklist
-        //storeTaskList();
+        //update session storage projectlist
+        storeProjectList();
 
         //remove the HTML element from the DOM
         this.parentNode.remove();
@@ -148,8 +149,8 @@ function loadProjectTask(task) {
             const taskIndex = activeProjectTasks.findIndex(task => task.description === descriptor.textContent);
             activeProjectTasks[taskIndex].completed = true;
             console.log(activeProjectTasks[taskIndex].completed);
-            //update stored taskList
-            //storeTaskList();
+            //update stored projectList
+            storeProjectList();
         }
         else {
             checkParent.classList.remove('completed');
@@ -157,8 +158,8 @@ function loadProjectTask(task) {
             const taskIndex = activeProjectTasks.findIndex(task => task.description === descriptor.textContent);
             activeProjectTasks[taskIndex].completed = false;
             console.log(activeProjectTasks[taskIndex].completed);
-            //update stored taskList
-            //storeTaskList();
+            //update stored projectList
+            storeProjectList();
         }
     }
     addTask(task);

@@ -1,5 +1,7 @@
+import { projectStorageCheck } from "./projects/project-objects";
 import { taskStorageCheck } from "./tasks/task-objects";
 import loadTasks from "./views/view-all";
+import { loadAllProjects } from "./projects/new-project";
 
 const content = document.getElementById('content');
 
@@ -126,7 +128,9 @@ function loadPage() {
 
     //Update task list if storage is available, then loadtasks so they populate at page load if available
     taskStorageCheck();
+    projectStorageCheck();
     loadTasks();
+    loadAllProjects();
 }
 
 export default loadPage;

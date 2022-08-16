@@ -1,6 +1,9 @@
 import { toggleAddBtn } from "../tasks/task-functions";
 import { projectList, project } from "./project-objects";
 import loadProjectView from "../views/view-project";
+import { storeProjectList } from "../storage/storage";
+
+export { loadAllProjects };
 
 export default function projectForm() {
     const container = document.querySelector('.container');
@@ -49,6 +52,7 @@ function submitProject(event) {
 
 function addProject(newProject) {
     projectList.push(newProject);
+    storeProjectList();
 }
 
 function loadProject(newProject) {
@@ -63,4 +67,20 @@ function loadProject(newProject) {
 
     //add event listener so clicking on the project loads that projects view/tasks
     project.addEventListener('click', loadProjectView);
+}
+
+//function to load all projects when there are existing projects saved in local storage
+function loadAllProjects() {
+    const projectNavList = document.querySelector('.projects-nav-list');
+
+    projectList.forEach(project => {
+        const savedProject = document.createElement('li');
+        savedProject.classList.add('project');
+        savedProject.textContent = project.name;
+
+        //append elements to Dom
+        projectNavList.appendChild(savedProject);
+
+        //add event listener so clicking on the project loads that projects view/tasks
+        savedProject.addEventListener('click', loadProjectView)});
 }

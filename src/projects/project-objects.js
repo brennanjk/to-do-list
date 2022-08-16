@@ -1,8 +1,17 @@
 
 
-export {projectList, project, setActiveProject, getActiveProject};
+export {projectList, project, setActiveProject, getActiveProject, projectStorageCheck};
 
 let projectList = []
+
+//check if taskList is saved in session storage
+function projectStorageCheck() {
+    if (localStorage.getItem('projectList')) {
+        const localProjectList = JSON.parse(localStorage.getItem("projectList"));
+        projectList = localProjectList;
+        console.log(`The task list is ${projectList}`)
+    }
+}
 
 class project{
 
