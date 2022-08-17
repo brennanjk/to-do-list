@@ -35,19 +35,40 @@ export default function projectForm() {
 
 function submitProject(event) {
     const name = document.querySelector('[name="project"]').value;
-
     const newProject = new project(name);
-    addProject(newProject);
-    console.log(projectList);
-    loadProject(newProject);
 
-    //prevent submit button from refreshing the page; clear content and remove form
-    event.preventDefault();
-    this.reset();
-    this.remove();
+    if (!projectList[0]) {
+        addProject(newProject);
+        console.log(projectList);
+        loadProject(newProject);
 
-    //toggle add task button back on
-    toggleAddBtn();
+        //prevent submit button from refreshing the page; clear content and remove form
+        event.preventDefault();
+        this.reset();
+        this.remove();
+
+        //toggle add task button back on
+        toggleAddBtn();
+    }
+    else {
+        const duplicateCheck = projectList.find(project => project.name === name);
+        if(duplicateCheck) {
+            alert('Project name already exists. Please enter a different name');
+            event.preventDefault();
+        } else {
+            event.preventDefault();
+            addProject(newProject);
+            console.log(projectList);
+            loadProject(newProject);
+            //prevent submit button from refreshing the page; clear content and remove form
+            event.preventDefault();
+            this.reset();
+            this.remove();
+            //toggle add task button back on
+            toggleAddBtn();
+
+        }
+    }
 }
 
 function addProject(newProject) {
