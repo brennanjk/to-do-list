@@ -74,18 +74,18 @@ function createNav() {
     projectsTitleImage.src = '../dist/images/blueprint.svg';
     projectsTitleImage.alt = 'project icon';
 
-    const projectsList = document.createElement('ul');
-    projectsList.classList = 'projects-nav-list';
     const projectBtn = document.createElement('button');
     projectBtn.classList = 'add-project-btn';
     projectBtn.textContent = 'New Project';
+    const projectsList = document.createElement('ul');
+    projectsList.classList = 'projects-nav-list';
 
     //append project nav elements together, append nav-bar to content
     projectsTitleDiv.appendChild(projectsTitleImage);
     projectsTitleDiv.appendChild(projectsTitleText);
     projectsNav.appendChild(projectsTitleDiv);
-    projectsNav.appendChild(projectsList);
     projectsNav.appendChild(projectBtn);
+    projectsNav.appendChild(projectsList);
     navBar.appendChild(projectsNav);
     content.appendChild(navBar);
 }
