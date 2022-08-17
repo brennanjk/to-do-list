@@ -76,15 +76,15 @@ function createNav() {
 
     const projectBtn = document.createElement('button');
     projectBtn.classList = 'add-project-btn';
-    projectBtn.textContent = 'New Project';
+    projectBtn.textContent = '+';
     const projectsList = document.createElement('ul');
     projectsList.classList = 'projects-nav-list';
 
     //append project nav elements together, append nav-bar to content
     projectsTitleDiv.appendChild(projectsTitleImage);
     projectsTitleDiv.appendChild(projectsTitleText);
+    projectsTitleDiv.appendChild(projectBtn);
     projectsNav.appendChild(projectsTitleDiv);
-    projectsNav.appendChild(projectBtn);
     projectsNav.appendChild(projectsList);
     navBar.appendChild(projectsNav);
     content.appendChild(navBar);
