@@ -8,6 +8,7 @@ export default function loadToday() {
     clearTasks();
     addTasks(tasksToday());
     addTaskButton();
+    viewChange();
 }
 
 function tasksToday() {    
@@ -28,4 +29,10 @@ function addTasks(tasks) {
     tasks.forEach(task => {
         loadTask(task);
     })
+}
+
+//update view title
+function viewChange() {
+    const viewTitle = document.querySelector('.view-title');
+    viewTitle.textContent = 'Tasks: Today';
 }

@@ -8,6 +8,7 @@ export default function loadWeek() {
 clearTasks();
 addTasks(tasksThisWeek());
 addTaskButton();
+viewChange();
 }
 
 function tasksThisWeek() { 
@@ -25,4 +26,10 @@ function addTasks(tasks) {
 tasks.forEach(task => {
 loadTask(task);
 })
+}
+
+//update view title
+function viewChange() {
+    const viewTitle = document.querySelector('.view-title');
+    viewTitle.textContent = 'Tasks: This Week';
 }

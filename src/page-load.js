@@ -93,6 +93,9 @@ function createNav() {
 function createContainer() {
     const container = document.createElement('div');
     container.classList.add('container');
+    const taskView = document.createElement('div');
+    taskView.classList.add('view-title');
+    taskView.textContent = 'Tasks: All';
     const taskList = document.createElement('ul');
     taskList.classList.add('task-list');
 
@@ -101,6 +104,7 @@ function createContainer() {
     btn.classList.add('add-task-btn');
     btn.textContent = '+';
     
+    container.appendChild(taskView);
     container.appendChild(taskList);
     container.appendChild(btn);
     content.appendChild(container);

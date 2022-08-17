@@ -9,6 +9,7 @@ export default function loadProjectView() {
     projectTaskButton();
     setActiveProject();
     addProjectTasks();
+    viewChange(getActiveProject().name);
 }
 
 function addProjectTasks() {
@@ -19,4 +20,10 @@ function addProjectTasks() {
         });
     }
     loadTasks(getActiveProject().projectTasks);
+}
+
+//update view title
+function viewChange(projectName) {
+    const viewTitle = document.querySelector('.view-title');
+    viewTitle.textContent = `Project: ${projectName}`;
 }

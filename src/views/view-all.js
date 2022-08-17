@@ -8,6 +8,7 @@ export default function loadTasks() {
     console.log(taskList);
     addTasks(taskList);
     addTaskButton();
+    viewChange();
 }
 
 function addTasks(tasks) {
@@ -16,4 +17,10 @@ function addTasks(tasks) {
     tasks.forEach(task => {
         loadTask(task);
     })
+}
+
+//update view title
+function viewChange() {
+    const viewTitle = document.querySelector('.view-title');
+    viewTitle.textContent = 'Tasks: All';
 }

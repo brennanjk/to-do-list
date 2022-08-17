@@ -126,6 +126,13 @@ li>img {
     width: 1.2rem;
 }
 
+.view-title {
+    color: var(--bg-color6);
+    padding: 0 0 1rem 1rem;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
 .task-list {
     display: flex;
     flex-direction: column;
