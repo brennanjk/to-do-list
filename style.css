@@ -224,7 +224,6 @@ li>img {
 .task-delete:hover {
     transform: scale(110%);
     background-color: var(--bg-color6);
-    color: var(--high-red);
 }
 
 .task-delete:active {
