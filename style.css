@@ -227,7 +227,7 @@ li>img {
 }
 
 .task-delete:active {
-    background-color: var(--high-red);
+    background-color: var(--bg-color3);
     color: var(--bg-color6);
 }
 
