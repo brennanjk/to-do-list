@@ -81,13 +81,20 @@ function loadProject(newProject) {
 
     const project = document.createElement('li');
     project.classList.add('project');
-    project.textContent = newProject.name;
+    const projectName = document.createElement ('div');
+    projectName.classList.add('.project-name');
+    projectName.textContent = newProject.name;
+    const projectDel = document.createElement('button');
+    projectDel.classList.add('project-del-btn');
+    projectDel.textContent = 'x';
 
     //append elements to Dom
+    project.appendChild(projectName);
+    project.appendChild(projectDel);
     projectNavList.appendChild(project);
 
     //add event listener so clicking on the project loads that projects view/tasks
-    project.addEventListener('click', loadProjectView);
+    projectName.addEventListener('click', loadProjectView);
 }
 
 //function to load all projects when there are existing projects saved in local storage
@@ -95,6 +102,8 @@ function loadAllProjects() {
     const projectNavList = document.querySelector('.projects-nav-list');
 
     projectList.forEach(project => {
+        loadProject(project);
+        /*
         const savedProject = document.createElement('li');
         savedProject.classList.add('project');
         savedProject.textContent = project.name;
@@ -103,5 +112,7 @@ function loadAllProjects() {
         projectNavList.appendChild(savedProject);
 
         //add event listener so clicking on the project loads that projects view/tasks
-        savedProject.addEventListener('click', loadProjectView)});
+        savedProject.addEventListener('click', loadProjectView) */
+    });
+        
 }
