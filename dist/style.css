@@ -77,15 +77,24 @@ body {
     list-style: none;
     display: flex;
     gap: 1rem;
-    cursor: pointer;
     padding: .5rem;
     border-radius: 15px;
 }
 
 .project {
+    display: flex;
     font-size: 1rem;
     font-weight: 400;
     padding-left: 1rem;
+}
+
+.nav-item,
+.project-name {
+    cursor: pointer;
+}
+
+.project-name {
+    flex: 1;
 }
 
 .nav-item:hover,
@@ -110,7 +119,8 @@ body {
     align-items: center;
 }
 
-.add-project-btn {
+.add-project-btn,
+.del-project-btn {
     font-size: .75em;
     border: none;
     background-color: var(--bg-color2);
