@@ -71,7 +71,7 @@ function createNav() {
     projectsTitleText.classList.add('projects-title');
     projectsTitleText.textContent = 'Projects';
     const projectsTitleImage = document.createElement('img');
-    projectsTitleImage.src = '../dist/images/blueprint.svg';
+    projectsTitleImage.src = './images/blueprint.svg';
     projectsTitleImage.alt = 'project icon';
 
     const projectBtn = document.createElement('button');
