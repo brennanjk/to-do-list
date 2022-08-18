@@ -1,7 +1,8 @@
-import { toggleAddBtn } from "../tasks/task-functions";
+import { loadTask, toggleAddBtn } from "../tasks/task-functions";
 import { projectList, project } from "./project-objects";
 import loadProjectView from "../views/view-project";
 import { storeProjectList } from "../storage/storage";
+import loadTasks from "../views/view-all";
 
 export { loadAllProjects };
 
@@ -111,8 +112,17 @@ function delProject() {
     //find delete buttons project name sibling
     const projectName = this.parentNode.querySelector('.project-name');
 
-    //find the index of the related projectList array object, and remove it, then update the project storage
+    //find the index of the related projectList array object
     const projectIndex = projectList.findIndex(project => project.name === projectName.textContent)
+
+    //Check if project is currently being viewed, and if true load the default all tasks view
+    const viewTitle = document.querySelector('.view-title');
+    console.log(viewTitle.textContent);
+    console.log(viewTitle.textContent === `Project: ${projectName.textContent}`)
+    if (viewTitle.textContent === `Project: ${projectName.textContent}`) {
+        loadTasks();
+    }
+    //Remove the project from the ProjectList and update the local storage
     projectList.splice(projectIndex, 1);
     storeProjectList();
 
