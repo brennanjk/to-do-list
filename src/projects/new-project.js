@@ -17,7 +17,7 @@ export default function projectForm() {
     const projectLabel = document.createElement('label');
     projectLabel.for = 'project';
     const projectInput = document.createElement('input');
-    projectInput.type = 'text'; projectInput.id = 'project'; projectInput.name = 'project'; projectInput.placeholder = 'New Project'; projectInput.required = true; projectInput.maxLength='20';
+    projectInput.type = 'text'; projectInput.id = 'project'; projectInput.name = 'project'; projectInput.placeholder = 'New Project'; projectInput.required = true; projectInput.maxLength='17';
     projectDiv.appendChild(projectLabel); projectDiv.appendChild(projectInput);
 
     const submitBtn = document.createElement('button');
