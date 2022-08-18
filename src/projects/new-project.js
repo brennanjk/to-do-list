@@ -93,8 +93,9 @@ function loadProject(newProject) {
     project.appendChild(projectDel);
     projectNavList.appendChild(project);
 
-    //add event listener so clicking on the project loads that projects view/tasks
+    //add event listeners: so clicking on the project loads that projects view/tasks, and clicking the delete button deletes the project
     projectName.addEventListener('click', loadProjectView);
+    projectDel.addEventListener('click', delProject);
 }
 
 //function to load all projects when there are existing projects saved in local storage
@@ -103,4 +104,18 @@ function loadAllProjects() {
 
     projectList.forEach(project => {
         loadProject(project)});        
+}
+
+//function to delete a project that we'll add to the projects delete button upon creation
+function delProject() {
+    //find delete buttons project name sibling
+    const projectName = this.parentNode.querySelector('.project-name');
+
+    //find the index of the related projectList array object, and remove it, then update the project storage
+    const projectIndex = projectList.findIndex(project => project.name === projectName.textContent)
+    projectList.splice(projectIndex, 1);
+    storeProjectList();
+
+    //remove the project element from the DOM
+    this.parentNode.remove();
 }
